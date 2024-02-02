@@ -1,0 +1,72 @@
+  <header class="items-sell-header">
+    <div class="left-title">まったり</div>
+    <%= link_to image_tag('piyo.jpg', size: '130x40'), "/" %>
+    <div class="right-title">家計簿</div>
+  </header>
+<%= form_with(model: @user, url: user_registration_path, class: 'registration-main', local: true) do |f| %>  
+<div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      ユーザー登録
+    </h1>
+  </div>
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">ニックネーム</label>
+    </div>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) しゃけ次郎", maxlength:"40" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">収入</label>
+    </div>
+    <%= f.text_area :incom, class:"input-default", id:"email", placeholder:"例) 200000", autofocus: true %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">固定支出</label>
+    </div>
+    <%= f.text_area :cost, class:"input-default", id:"password", placeholder:"例) 70000" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">目標金額</label>
+    </div>
+    <%= f.text_area :goal, class:"input-default", id:"password-confirmation", placeholder:"例) 20000" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">買いたい物</label>
+    </div>
+    <%= f.text_area :like_item, class:"input-default", id:"password-confirmation", placeholder:"例) ラーメン" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">単価</label>
+    </div>
+    <%= f.text_area :like_price, class:"input-default", id:"password-confirmation", placeholder:"例) 1200円" %>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">単位</label>
+    </div>
+    <%= f.text_area :like_unit, class:"input-default", id:"password-confirmation", placeholder:"例) 杯" %>
+  </div>
+  <div class='register-btn'>
+    <%= f.submit "とうろく" ,class:"register-red-btn" %>
+  </div>
+</div>
+<% end %>
+
+
+<footer class="items-sell-footer">
+    <div class="bottom-btn-left">
+      <%= link_to "＜", root_path %>
+    </div>
+    <div class="bottom-btn-right">
+      <%= link_to "＞", root_path %>
+    </div>
+</footer>
+
+

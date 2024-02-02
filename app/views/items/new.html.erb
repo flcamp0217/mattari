@@ -1,0 +1,46 @@
+
+  <header class="items-sell-header">
+    <div class="left-title">まったり</div>
+    <%= link_to image_tag('piyo.jpg', size: '130x60'), "/" %>
+    <div class="right-title">家計簿</div>
+  </header>
+<div class="items-sell-contents">
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">支出を入力</h2>
+    <%= form_with model: @item, url:items_path, local: true do |f| %>
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        <%= Time.now.strftime("%Y年%m月%d日") %>（<%= Time.now.strftime("%A") %>）
+      </div>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          品名
+        </div>
+        <%= f.text_area :item_name, class:"items-text", id:"item-name", placeholder:"品名（なくてもよい)", maxlength:"40" %>
+      </div>
+      <div class="weight-bold-text" >
+          カテゴリー
+      </div>
+      <%= f.text_area :item_name, class:"items-text", id:"item-name", placeholder:"カテゴリー（なくてもよい)", maxlength:"40" %>
+      <div class="weight-bold-text" >
+          ¥
+      </div>
+      <%= f.text_area :item_name, class:"items-text", id:"item-name", placeholder:"金額（あってほしい)", maxlength:"40" %>
+    </div>
+    
+    
+    <div class="sell-btn-contents">
+      <%= f.submit "とうろく" ,class:"sell-btn" %>
+    </div>
+  </div>
+  <% end %>
+  <footer class="items-sell-footer">
+    <div class="bottom-btn-left">
+      <%= link_to "＜", new_user_registration_path %>
+    </div>
+    <div class="bottom-btn-right">
+      <%= link_to "＞", root_path %>
+    </div>
+  </footer>
+</div>
