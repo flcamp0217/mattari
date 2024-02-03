@@ -1,24 +1,23 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Users テーブル
+| Column             | Type    | Options     |
+| ------------------ | ------- | ----------- |
+| nickname           | string  | null: true  |
+| income             | integer | null: true  |
+| cost               | integer | null: true  |
+| goal               | string  | null: true  |
+| like_item          | string  | null: true  |
+| like_price         | integer | null: true  |
+| like_unit          | string  | null: true  |
+### Association
+- has_many : items
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Items テーブル
+|Column                     |Type             |Options                          |
+|---------------------------|-----------------|---------------------------------|
+|day                        |string           |null : true                      |
+|item_name                  |text             |null : true                      |
+|category_id                |integer          |null : true                      |
+|money                      |integer          |null : false                     |
+- belongs_to: user
