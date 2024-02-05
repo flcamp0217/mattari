@@ -11,7 +11,7 @@
 
     <div class="new-items">
       <div class="weight-bold-text">
-        <%= Time.now.strftime("%Y年%m月%d日") %>（<%= Time.now.strftime("%A") %>）
+        <%= Time.current.strftime("%Y年%m月%d日") %>（<%= Time.current.strftime("%A") %>）
       </div>
       <div class="items-explain">
         <div class="weight-bold-text">
@@ -22,11 +22,11 @@
       <div class="weight-bold-text" >
           カテゴリー
       </div>
-      <%= f.text_area :item_name, class:"items-text", id:"item-name", placeholder:"カテゴリー（なくてもよい)", maxlength:"40" %>
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
       <div class="weight-bold-text" >
           ¥
       </div>
-      <%= f.text_area :item_name, class:"items-text", id:"item-name", placeholder:"金額（あってほしい)", maxlength:"40" %>
+      <%= f.text_area :money, class:"items-text", id:"money", placeholder:"金額（あってほしい)", maxlength:"40" %>
     </div>
     
     

@@ -13,6 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :like_item
       t.integer :like_price
       t.string :like_unit
+      
 
       ## Recoverable
       t.string   :reset_password_token
